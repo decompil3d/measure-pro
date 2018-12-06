@@ -1,0 +1,134 @@
+{
+  "styles": {},
+  "type": "APL",
+  "version": "1.0",
+  "theme": "light",
+  "import": [
+    {
+      "name": "alexa-layouts",
+      "version": "1.0.0"
+    },
+    {
+      "name": "alexa-styles",
+      "version": "1.0.0"
+    }
+  ],
+  "resources": [
+    {
+      "colors": {
+        "accent": "#C00",
+        "text": "#333"
+      }
+    }
+  ],
+  "layouts": {},
+  "mainTemplate": {
+    "parameters": [
+      "payload"
+    ],
+    "items": [
+      {
+        "type": "Container",
+        "items": [
+          {
+            "type": "Container",
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100vw",
+            "height": "100vh",
+            "items": [
+              {
+                "type": "Image",
+                "overlayColor": "#FFFFFFCC",
+                "scale": "best-fill",
+                "height": "100vh",
+                "width": "100vw",
+                "source": "https://decompil3d.github.io/measure-pro/1.jpg"
+              }
+            ]
+          },
+          {
+            "type": "Container",
+            "height": "100vh",
+            "items": [
+              {
+                "type": "Frame",
+                "backgroundColor": "@accent",
+                "height": "2vh",
+                "width": "100vw"
+              },
+              {
+                "type": "Frame",
+                "backgroundColor": "#FFFFFF66",
+                "height": "15vh",
+                "item": {
+                  "type": "Container",
+                  "justifyContent": "stretch",
+                  "alignItems": "center",
+                  "direction": "row",
+                  "height": "100%",
+                  "paddingLeft": "5vw",
+                  "paddingRight": "5vw",
+                  "items": [
+                    {
+                      "type": "Text",
+                      "color": "@text",
+                      "text": "MeasurePro",
+                      "grow": 1
+                    },
+                    {
+                      "type": "Text",
+                      "text": "🥄🥄🥄"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Pager",
+                "width": "100vw",
+                "grow": 1,
+                "items": [
+                  {
+                    "type": "Container",
+                    "paddingTop": "5vh",
+                    "paddingBottom": "5vh",
+                    "paddingRight": "5vw",
+                    "paddingLeft": "5vw",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "color": "@text",
+                        "text": "${data}"
+                      }
+                    ],
+                    "data": "${payload.volumes}"
+                  }
+                ]
+              },
+              {
+                "type": "Frame",
+                "backgroundColor": "#FFFFFF66",
+                "item": {
+                  "type": "Container",
+                  "height": "12vh",
+                  "justifyContent": "center",
+                  "items": [
+                    {
+                      "type": "Text",
+                      "text": "💬 ${payload.strings.properties.hintTextToMetric}",
+                      "paddingLeft": "5vw",
+                      "fontSize": "26",
+                      "fontStyle": "italic",
+                      "color": "@accent"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

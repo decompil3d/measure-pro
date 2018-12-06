@@ -1,0 +1,35 @@
+{
+  "name": "measure-pro",
+  "version": "1.0.0",
+  "description": "A visual Alexa skill that shows common measurement equivalencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "eslint -c ./.eslintrc.json *.js ../models/*.json",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/decompil3d/measure-pro.git"
+  },
+  "keywords": [
+    "alexa",
+    "measure",
+    "measurements",
+    "conversion",
+    "apl"
+  ],
+  "author": "Jonathan Keslin <github@jonathankeslin.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/decompil3d/measure-pro/issues"
+  },
+  "homepage": "https://github.com/decompil3d/measure-pro#readme",
+  "dependencies": {
+    "ask-sdk": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-plugin-json": "^1.2.1"
+  }
+}

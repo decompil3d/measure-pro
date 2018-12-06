@@ -1,0 +1,43 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "measure pro",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "go home",
+            "home"
+          ]
+        },
+        {
+          "name": "ShowVolumeConversionsIntent",
+          "samples": [
+            "show volume conversions",
+            "show volumes",
+            "volumes"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}

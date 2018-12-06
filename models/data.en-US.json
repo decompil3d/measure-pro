@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "type": "object",
+    "properties": {
+      "hintTextToMetric": " show me metric measurements",
+      "hintTextToUS": " show me US measurements"
+    },
+    "transformers": [
+      {
+        "inputPath": "hintTextToMetric",
+        "transformer": "textToHint"
+      },
+      {
+        "inputPath": "hintTextToUS",
+        "transformer": "textToHint"
+      }
+    ]
+  },
+  "volumes": [
+    "1 tbsp = 3 tsp",
+    "2 tbsp = 1 fl oz",
+    "4 tbsp = ¼ cup",
+    "1 cup = 8 fl oz"
+  ]
+}
