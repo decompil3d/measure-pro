@@ -3,32 +3,49 @@
 
 const Alexa = require('ask-sdk-core');
 
+const rootToken = 'rootToken';
+
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Measure Pro!';
+    const speechText = 'Welcome to Measure Pro!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        'Alexa.Presentation.APL.RenderDocument',
+        token: rootToken,
+        version: '1.0',
+        document: require('./models/apl.json'),
+        datasources: {
+          payload: require('./data.en-US.json')
+        }
+      })
       .getResponse();
   },
 };
 
-const HelloWorldIntentHandler = {
+const ShowMetricConversionsIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'ShowMetricConversionsIntent';
   },
   handle(handlerInput) {
-    const speechText = 'Hello World!';
-
     return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.ExecuteCommands',
+        token: rootToken,
+        commands: [
+          {
+            type: 'SetPage',
+            componentId: 'rootPager',
+            value: 1
+          }
+        ]
+      })
       .getResponse();
   },
 };

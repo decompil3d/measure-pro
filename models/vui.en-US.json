@@ -29,11 +29,25 @@
           ]
         },
         {
-          "name": "ShowVolumeConversionsIntent",
+          "name": "ShowMetricConversionsIntent",
           "samples": [
-            "show volume conversions",
-            "show volumes",
-            "volumes"
+            "show me metric conversions",
+            "show metric conversions",
+            "show metric",
+            "metric conversions",
+            "metric"
+          ]
+        },
+        {
+          "name": "ShowUSMeasurementsIntent",
+          "samples": [
+            "show me u s measurements",
+            "show u s measurements",
+            "show u s",
+            "u s",
+            "show me u s a measurements",
+            "show u s a measurements",
+            "show u s a"
           ]
         }
       ],

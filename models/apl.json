@@ -21,7 +21,76 @@
       }
     }
   ],
-  "layouts": {},
+  "layouts": {
+    "MeasureProFooter": {
+      "description": "A footer with translucent background",
+      "parameters": [
+        {
+          "name": "hint",
+          "type": "string"
+        }
+      ],
+      "item": {
+        "type": "Frame",
+        "backgroundColor": "#FFFFFF66",
+        "item": {
+          "type": "Container",
+          "height": "12vh",
+          "justifyContent": "center",
+          "items": [
+            {
+              "type": "Text",
+              "text": "💬 ${hint}",
+              "paddingLeft": "5vw",
+              "fontSize": "26",
+              "fontStyle": "italic",
+              "color": "@accent"
+            }
+          ]
+        }
+      }
+    },
+    "MeasureProPage": {
+      "description": "A page containing some data and a footer",
+      "parameters": [
+        {
+          "name": "hint",
+          "type": "string"
+        },
+        {
+          "name": "measurements",
+          "type": "any"
+        }
+      ],
+      "items": [
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "Container",
+              "paddingTop": "5vh",
+              "paddingBottom": "5vh",
+              "paddingRight": "5vw",
+              "paddingLeft": "5vw",
+              "grow": 1,
+              "items": [
+                {
+                  "type": "Text",
+                  "color": "@text",
+                  "text": "${data}"
+                }
+              ],
+              "data": "${measurements}"
+            },
+            {
+              "type": "MeasureProFooter",
+              "hint": "${hint}"
+            }
+          ]
+        }
+      ]
+    }
+  },
   "mainTemplate": {
     "parameters": [
       "payload"
@@ -64,7 +133,7 @@
                 "height": "15vh",
                 "item": {
                   "type": "Container",
-                  "justifyContent": "stretch",
+                  "justifyContent": "spaceBetween",
                   "alignItems": "center",
                   "direction": "row",
                   "height": "100%",
@@ -86,44 +155,21 @@
               },
               {
                 "type": "Pager",
+                "componentId": "rootPager",
                 "width": "100vw",
                 "grow": 1,
                 "items": [
                   {
-                    "type": "Container",
-                    "paddingTop": "5vh",
-                    "paddingBottom": "5vh",
-                    "paddingRight": "5vw",
-                    "paddingLeft": "5vw",
-                    "items": [
-                      {
-                        "type": "Text",
-                        "color": "@text",
-                        "text": "${data}"
-                      }
-                    ],
-                    "data": "${payload.volumes}"
+                    "type": "MeasureProPage",
+                    "measurements": "${payload.us}",
+                    "hint": "${payload.strings.properties.hintTextToMetric}"
+                  },
+                  {
+                    "type": "MeasureProPage",
+                    "measurements": "${payload.metric}",
+                    "hint": "${payload.strings.properties.hintTextToUS}"
                   }
                 ]
-              },
-              {
-                "type": "Frame",
-                "backgroundColor": "#FFFFFF66",
-                "item": {
-                  "type": "Container",
-                  "height": "12vh",
-                  "justifyContent": "center",
-                  "items": [
-                    {
-                      "type": "Text",
-                      "text": "💬 ${payload.strings.properties.hintTextToMetric}",
-                      "paddingLeft": "5vw",
-                      "fontSize": "26",
-                      "fontStyle": "italic",
-                      "color": "@accent"
-                    }
-                  ]
-                }
               }
             ]
           }
