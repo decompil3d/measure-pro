@@ -2,8 +2,8 @@
   "strings": {
     "type": "object",
     "properties": {
-      "hintTextToMetric": " show me metric conversions",
-      "hintTextToUS": " show me US measurements"
+      "hintTextToMetric": "ask MeasurePro to show me metric conversions",
+      "hintTextToUS": "ask MeasurePro to show me US measurements"
     },
     "transformers": [
       {
@@ -16,15 +16,25 @@
       }
     ]
   },
-  "us": [
-    "1 tbsp = 3 tsp",
-    "2 tbsp = 1 fl oz",
-    "4 tbsp = ¼ cup",
-    "1 cup = 8 fl oz"
-  ],
-  "metric": [
-    "1 L = 1000 mL",
-    "1 dL = 100 mL",
-    "1 cL = 10 mL"
-  ]
+  "us": {
+    "type": "object",
+    "properties": {
+      "measurements": [
+        "1 tbsp = 3 tsp",
+        "2 tbsp = 1 fl oz",
+        "4 tbsp = ¼ cup",
+        "1 cup = 8 fl oz"
+      ]
+    }
+  },
+  "metric": {
+    "type": "object",
+    "properties": {
+      "measurements": [
+        "1 L = 1000 mL",
+        "1 dL = 100 mL",
+        "1 cL = 10 mL"
+      ]
+    }
+  }
 }

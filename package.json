@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "lint": "eslint -c ./.eslintrc.json *.js ../models/*.json",
-    "pretest": "npm run lint"
+    "lint": "eslint *.js models/*.json",
+    "pretest": "npm run lint",
+    "build": "mkdir -p dist && zip -r -u dist/lambda.zip ./models ./node_modules ./*.js ./package.json ./LICENSE",
+    "prebuild": "npm run lint",
+    "deploy": "aws lambda update-function-code --function-name \"arn:aws:lambda:us-west-2:072032131665:function:aws-serverless-repository-alexaskillskitnodejsfact-1DNW9J10BFSSG\" --zip-file \"fileb://./dist/lambda.zip\" --profile measurepro --region us-west-2"
   },
   "repository": {
     "type": "git",

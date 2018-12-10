@@ -77,6 +77,7 @@
                 {
                   "type": "Text",
                   "color": "@text",
+                  "fontSize": "26",
                   "text": "${data}"
                 }
               ],
@@ -155,18 +156,18 @@
               },
               {
                 "type": "Pager",
-                "componentId": "rootPager",
+                "id": "rootPager",
                 "width": "100vw",
                 "grow": 1,
                 "items": [
                   {
                     "type": "MeasureProPage",
-                    "measurements": "${payload.us}",
+                    "measurements": "${payload.us.properties.measurements}",
                     "hint": "${payload.strings.properties.hintTextToMetric}"
                   },
                   {
                     "type": "MeasureProPage",
-                    "measurements": "${payload.metric}",
+                    "measurements": "${payload.metric.properties.measurements}",
                     "hint": "${payload.strings.properties.hintTextToUS}"
                   }
                 ]

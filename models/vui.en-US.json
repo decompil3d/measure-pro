@@ -41,13 +41,13 @@
         {
           "name": "ShowUSMeasurementsIntent",
           "samples": [
-            "show me u s measurements",
-            "show u s measurements",
-            "show u s",
-            "u s",
-            "show me u s a measurements",
-            "show u s a measurements",
-            "show u s a"
+            "show me u.s. measurements",
+            "show u.s. measurements",
+            "show u.s.",
+            "u.s.",
+            "show me u.s.a. measurements",
+            "show u.s.a. measurements",
+            "show u.s.a."
           ]
         }
       ],
