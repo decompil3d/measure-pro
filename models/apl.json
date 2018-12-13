@@ -73,15 +73,39 @@
               "paddingRight": "5vw",
               "paddingLeft": "5vw",
               "grow": 1,
+              "direction": "row",
               "items": [
                 {
-                  "type": "Text",
-                  "color": "@text",
-                  "fontSize": "26",
-                  "text": "${data}"
+                  "type": "Container",
+                  "grow": 1,
+                  "data": "${measurements.column1}",
+                  "items": [
+                    {
+                      "type": "Text",
+                      "color": "@text",
+                      "fontSize": "${data.heading && 30 || 26}",
+                      "spacing": "10",
+                      "text": "${data.heading || data.text}",
+                      "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                    }
+                  ]
+                },
+                {
+                  "type": "Container",
+                  "grow": 1,
+                  "data": "${measurements.column2}",
+                  "items": [
+                    {
+                      "type": "Text",
+                      "color": "@text",
+                      "fontSize": "${data.heading && 30 || 26}",
+                      "spacing": "10",
+                      "text": "${data.heading || data.text}",
+                      "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                    }
+                  ]
                 }
-              ],
-              "data": "${measurements}"
+              ]
             },
             {
               "type": "MeasureProFooter",
@@ -162,12 +186,12 @@
                 "items": [
                   {
                     "type": "MeasureProPage",
-                    "measurements": "${payload.us.properties.measurements}",
+                    "measurements": "${payload.us.properties}",
                     "hint": "${payload.strings.properties.hintTextToMetric}"
                   },
                   {
                     "type": "MeasureProPage",
-                    "measurements": "${payload.metric.properties.measurements}",
+                    "measurements": "${payload.metric.properties}",
                     "hint": "${payload.strings.properties.hintTextToUS}"
                   }
                 ]
