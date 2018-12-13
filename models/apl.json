@@ -18,6 +18,9 @@
       "colors": {
         "accent": "#C00",
         "text": "#333"
+      },
+      "dimensions": {
+        "spacing": "8dp"
       }
     }
   ],
@@ -84,7 +87,7 @@
                       "type": "Text",
                       "color": "@text",
                       "fontSize": "${data.heading && 30 || 26}",
-                      "spacing": "10",
+                      "spacing": "@spacing",
                       "text": "${data.heading || data.text}",
                       "fontWeight": "${data.heading && 'bold' || 'normal'}"
                     }
@@ -99,7 +102,23 @@
                       "type": "Text",
                       "color": "@text",
                       "fontSize": "${data.heading && 30 || 26}",
-                      "spacing": "10",
+                      "spacing": "@spacing",
+                      "text": "${data.heading || data.text}",
+                      "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                    }
+                  ]
+                },
+                {
+                  "when": "${measurements.column3 != null}",
+                  "type": "Container",
+                  "grow": 1,
+                  "data": "${measurements.column3}",
+                  "items": [
+                    {
+                      "type": "Text",
+                      "color": "@text",
+                      "fontSize": "${data.heading && 30 || 26}",
+                      "spacing": "@spacing",
                       "text": "${data.heading || data.text}",
                       "fontWeight": "${data.heading && 'bold' || 'normal'}"
                     }
