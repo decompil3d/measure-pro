@@ -11,6 +11,10 @@
     {
       "name": "alexa-styles",
       "version": "1.0.0"
+    },
+    {
+      "name": "alexa-viewport-profiles",
+      "version" : "1.0.0"
     }
   ],
   "resources": [
@@ -20,7 +24,40 @@
         "text": "#333"
       },
       "dimensions": {
-        "spacing": "8dp"
+        "spacing": "8dp",
+        "bodySize": "26dp",
+        "headingSize": "30dp",
+        "hintSize": "26dp",
+        "titleSize": "40dp",
+        "mainBorderWidth": "0dp"
+      }
+    },
+    {
+      "when": "${@viewportProfile == @hubLandscapeLarge}",
+      "dimensions": {
+        "bodySize": "36dp",
+        "headingSize": "40dp",
+        "hintSize": "34dp",
+        "titleSize": "50dp"
+      }
+    },
+    {
+      "when": "${@viewportProfile == @tvLandscapeXLarge}",
+      "dimensions": {
+        "bodySize": "23dp",
+        "headingSize": "27dp",
+        "hintSize": "23dp",
+        "titleSize": "38dp"
+      }
+    },
+    {
+      "when": "${@viewportProfile == @hubRoundSmall}",
+      "dimensions": {
+        "bodySize": "18dp",
+        "headingSize": "22dp",
+        "hintSize": "18dp",
+        "titleSize": "25dp",
+        "mainBorderWidth": "3dp"
       }
     }
   ],
@@ -45,7 +82,7 @@
               "type": "Text",
               "text": "💬 ${hint}",
               "paddingLeft": "5vw",
-              "fontSize": "26",
+              "fontSize": "@hintSize",
               "fontStyle": "italic",
               "color": "@accent"
             }
@@ -71,6 +108,7 @@
           "items": [
             {
               "type": "Container",
+              "when": "${@viewportProfile != @hubRoundSmall}",
               "paddingTop": "5vh",
               "paddingBottom": "5vh",
               "paddingRight": "5vw",
@@ -86,7 +124,7 @@
                     {
                       "type": "Text",
                       "color": "@text",
-                      "fontSize": "${data.heading && 30 || 26}",
+                      "fontSize": "${data.heading && @headingSize || @bodySize}",
                       "spacing": "@spacing",
                       "text": "${data.heading || data.text}",
                       "fontWeight": "${data.heading && 'bold' || 'normal'}"
@@ -101,7 +139,7 @@
                     {
                       "type": "Text",
                       "color": "@text",
-                      "fontSize": "${data.heading && 30 || 26}",
+                      "fontSize": "${data.heading && @headingSize || @bodySize}",
                       "spacing": "@spacing",
                       "text": "${data.heading || data.text}",
                       "fontWeight": "${data.heading && 'bold' || 'normal'}"
@@ -117,7 +155,7 @@
                     {
                       "type": "Text",
                       "color": "@text",
-                      "fontSize": "${data.heading && 30 || 26}",
+                      "fontSize": "${data.heading && @headingSize || @bodySize}",
                       "spacing": "@spacing",
                       "text": "${data.heading || data.text}",
                       "fontWeight": "${data.heading && 'bold' || 'normal'}"
@@ -127,7 +165,65 @@
               ]
             },
             {
+              "type": "ScrollView",
+              "when": "${@viewportProfile == @hubRoundSmall}",
+              "grow": 1,
+              "item": {
+                "type": "Sequence",
+                "width": "100vw",
+                "items": [
+                  {
+                    "type": "Container",
+                    "data": "${measurements.column1}",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "textAlign": "center",
+                        "color": "@text",
+                        "fontSize": "${data.heading && @headingSize || @bodySize}",
+                        "spacing": "@spacing",
+                        "text": "${data.heading || data.text}",
+                        "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Container",
+                    "data": "${measurements.column2}",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "textAlign": "center",
+                        "color": "@text",
+                        "fontSize": "${data.heading && @headingSize || @bodySize}",
+                        "spacing": "@spacing",
+                        "text": "${data.heading || data.text}",
+                        "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                      }
+                    ]
+                  },
+                  {
+                    "when": "${measurements.column3 != null}",
+                    "type": "Container",
+                    "data": "${measurements.column3}",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "textAlign": "center",
+                        "color": "@text",
+                        "fontSize": "${data.heading && @headingSize || @bodySize}",
+                        "spacing": "@spacing",
+                        "text": "${data.heading || data.text}",
+                        "fontWeight": "${data.heading && 'bold' || 'normal'}"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
               "type": "MeasureProFooter",
+              "when": "${@viewportProfile != @hubRoundSmall}",
               "hint": "${hint}"
             }
           ]
@@ -167,6 +263,7 @@
             "items": [
               {
                 "type": "Frame",
+                "when": "${@viewportProfile != @hubRoundSmall}",
                 "backgroundColor": "@accent",
                 "height": "2vh",
                 "width": "100vw"
@@ -187,11 +284,14 @@
                     {
                       "type": "Text",
                       "color": "@text",
+                      "fontSize": "@titleSize",
+                      "textAlign": "${@viewportProfile != @hubRoundSmall ? 'auto' : 'center'}",
                       "text": "MeasurePro",
                       "grow": 1
                     },
                     {
                       "type": "Text",
+                      "when": "${@viewportProfile != @hubRoundSmall}",
                       "text": "🥄🥄🥄"
                     }
                   ]
