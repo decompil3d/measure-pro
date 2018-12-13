@@ -2,9 +2,9 @@
   "strings": {
     "type": "object",
     "properties": {
-      "welcome": "Welcome to Measure Pro!",
-      "hintTextToMetric": "ask MeasurePro to show me metric conversions",
-      "hintTextToUS": "ask MeasurePro to show me US measurements"
+      "welcome": "Bienvenue sur Measure Pro!",
+      "hintTextToMetric": "demander à MeasurePro de me montrer les conversions métriques",
+      "hintTextToUS": "demander à MeasurePro de me montrer les mesures américaines"
     },
     "transformers": [
       {
@@ -21,22 +21,22 @@
     "type": "object",
     "properties": {
       "column1": [
-        { "heading": "US Measurements" },
-        { "text": "1 tbsp = 3 tsp = ½ fl oz" },
-        { "text": "2 tbsp = ⅛ cup = 1 fl oz" },
-        { "text": "4 tbsp = ¼ cup = 2 fl oz" },
-        { "text": "5 tbsp + 1 tsp = ⅓ cup = 2⅔ fl oz" },
-        { "text": "8 tbsp = ½ cup = 4 fl oz" },
-        { "text": "10 tbsp + 2 tsp = ⅔ cup = 5⅓ fl oz" },
-        { "text": "12 tbsp = ¾ cup = 6 fl oz" },
-        { "text": "16 tbsp = 1 cup = 8 fl oz" }
+        { "heading": "Mesures Américaines" },
+        { "text": "1 c.à.s. = 3 c.à.c = ½ fl oz" },
+        { "text": "2 c.à.s. = ⅛ tasse = 1 fl oz" },
+        { "text": "4 c.à.s. = ¼ tasse = 2 fl oz" },
+        { "text": "5 c.à.s. + 1 c.à.c = ⅓ tasse = 2⅔ fl oz" },
+        { "text": "8 c.à.s. = ½ tasse = 4 fl oz" },
+        { "text": "10 c.à.s. + 2 c.à.c = ⅔ tasse = 5⅓ fl oz" },
+        { "text": "12 c.à.s. = ¾ tasse = 6 fl oz" },
+        { "text": "16 c.à.s. = 1 tasse = 8 fl oz" }
       ],
       "column2": [
         { "heading": " " },
-        { "text": "1 cup = ½ pint = 8 fl oz" },
-        { "text": "2 cups = 1 pint = 16 fl oz" },
-        { "text": "4 cups = 1 quart = 32 fl oz" },
-        { "text": "2 pints = 1 quart = 32 fl oz" },
+        { "text": "1 tasse = ½ pinte = 8 fl oz" },
+        { "text": "2 tasses = 1 pinte = 16 fl oz" },
+        { "text": "4 tasses = 1 quart = 32 fl oz" },
+        { "text": "2 pintes = 1 quart = 32 fl oz" },
         { "text": "2 quarts = ½ gallon = 64 fl oz" },
         { "text": "4 quarts = 1 gallon = 128 fl oz" }
       ]
@@ -47,16 +47,16 @@
     "properties": {
       "column1": [
         { "heading": "Volume" },
-        { "text": "⅛ cup ≈ 30 mL" },
-        { "text": "¼ cup ≈ 59 mL" },
-        { "text": "⅓ cup ≈ 79 mL" },
-        { "text": "½ cup ≈ 118 mL" },
-        { "text": "⅔ cup ≈ 158 mL" },
-        { "text": "¾ cup ≈ 177 mL" },
-        { "text": "1 cup ≈ 240 mL" }
+        { "text": "⅛ tasse ≈ 30 mL" },
+        { "text": "¼ tasse ≈ 59 mL" },
+        { "text": "⅓ tasse ≈ 79 mL" },
+        { "text": "½ tasse ≈ 118 mL" },
+        { "text": "⅔ tasse ≈ 158 mL" },
+        { "text": "¾ tasse ≈ 177 mL" },
+        { "text": "1 tasse ≈ 240 mL" }
       ],
       "column2": [
-        { "heading": "Weight" },
+        { "heading": "Poids" },
         { "text": "½ oz ≈ 15 g" },
         { "text": "1 oz ≈ 29 g" },
         { "text": "2 oz ≈ 57 g" },
@@ -67,7 +67,7 @@
         { "text": "8 oz ≈ 227 g" }
       ],
       "column3": [
-        { "heading": "Temperature" },
+        { "heading": "Température" },
         { "text": "200℉ ≈ 93℃" },
         { "text": "250℉ ≈ 121℃" },
         { "text": "300℉ ≈ 150℃" },

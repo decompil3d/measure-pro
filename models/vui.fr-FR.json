@@ -1,0 +1,52 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "measure pro",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "aidez-moi"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "rentrer chez soi",
+            "maison"
+          ]
+        },
+        {
+          "name": "ShowMetricConversionsIntent",
+          "samples": [
+            "montre-moi les conversions métriques",
+            "montre les conversions métriques",
+            "afficher les conversions métriques",
+            "afficher métrique",
+            "conversions métriques",
+            "métrique"
+          ]
+        },
+        {
+          "name": "ShowUSMeasurementsIntent",
+          "samples": [
+            "montre-moi les mesures américaines",
+            "montre les mesures américaines",
+            "afficher les mesures américaines",
+            "montrer américain",
+            "montrer américain"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}

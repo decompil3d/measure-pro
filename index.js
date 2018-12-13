@@ -8,7 +8,9 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to Measure Pro!';
+    const locale = handlerInput.requestEnvelope.request.locale;
+    const datasources = require(`./models/data.${locale}.json`);
+    const speechText = datasources.strings.properties.welcome;
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -18,7 +20,7 @@ const LaunchRequestHandler = {
         token: 'rootToken',
         version: '1.0',
         document: require('./models/apl.json'),
-        datasources: require('./models/data.en-US.json')
+        datasources
       })
       .getResponse();
   },
