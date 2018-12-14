@@ -1,0 +1,82 @@
+{
+  "strings": {
+    "type": "object",
+    "properties": {
+      "welcome": "Willkommen bei Measure Pro!",
+      "hintTextToMetric": "Bitten Sie MeasurePro, mir die Metrikkonvertierungen anzuzeigen",
+      "hintTextToUS": "Fragen Sie MeasurePro, um mir amerikanische Maße zu zeigen"
+    },
+    "transformers": [
+      {
+        "inputPath": "hintTextToMetric",
+        "transformer": "textToHint"
+      },
+      {
+        "inputPath": "hintTextToUS",
+        "transformer": "textToHint"
+      }
+    ]
+  },
+  "us": {
+    "type": "object",
+    "properties": {
+      "column1": [
+        { "heading": "Amerikanische Messungen" },
+        { "text": "1 E.L. = 3 T.L. = ½ fl oz" },
+        { "text": "2 E.L. = ⅛ tasse = 1 fl oz" },
+        { "text": "4 E.L. = ¼ tasse = 2 fl oz" },
+        { "text": "5 E.L. + 1 T.L. = ⅓ tasse = 2⅔ fl oz" },
+        { "text": "8 E.L. = ½ tasse = 4 fl oz" },
+        { "text": "10 E.L. + 2 T.L. = ⅔ tasse = 5⅓ fl oz" },
+        { "text": "12 E.L. = ¾ tasse = 6 fl oz" },
+        { "text": "16 E.L. = 1 tasse = 8 fl oz" }
+      ],
+      "column2": [
+        { "heading": " " },
+        { "text": "1 tasse = ½ pint = 8 fl oz" },
+        { "text": "2 tassen = 1 pint = 16 fl oz" },
+        { "text": "4 tassen = 1 quart = 32 fl oz" },
+        { "text": "2 pints = 1 quart = 32 fl oz" },
+        { "text": "2 quarts = ½ gallone = 64 fl oz" },
+        { "text": "4 quarts = 1 gallone = 128 fl oz" }
+      ]
+    }
+  },
+  "metric": {
+    "type": "object",
+    "properties": {
+      "column1": [
+        { "heading": "Rauminhalt" },
+        { "text": "⅛ tasse ≈ 30 mL" },
+        { "text": "¼ tasse ≈ 59 mL" },
+        { "text": "⅓ tasse ≈ 79 mL" },
+        { "text": "½ tasse ≈ 118 mL" },
+        { "text": "⅔ tasse ≈ 158 mL" },
+        { "text": "¾ tasse ≈ 177 mL" },
+        { "text": "1 tasse ≈ 240 mL" }
+      ],
+      "column2": [
+        { "heading": "Gewicht" },
+        { "text": "½ oz ≈ 15 g" },
+        { "text": "1 oz ≈ 29 g" },
+        { "text": "2 oz ≈ 57 g" },
+        { "text": "3 oz ≈ 85 g" },
+        { "text": "4 oz ≈ 113 g" },
+        { "text": "5 oz ≈ 141 g" },
+        { "text": "6 oz ≈ 170 g" },
+        { "text": "8 oz ≈ 227 g" }
+      ],
+      "column3": [
+        { "heading": "Temperatur" },
+        { "text": "200℉ ≈ 93℃" },
+        { "text": "250℉ ≈ 121℃" },
+        { "text": "300℉ ≈ 150℃" },
+        { "text": "325℉ ≈ 160℃" },
+        { "text": "350℉ ≈ 180℃" },
+        { "text": "375℉ ≈ 190℃" },
+        { "text": "400℉ ≈ 200℃" },
+        { "text": "425℉ ≈ 220℃" }
+      ]
+    }
+  }
+}

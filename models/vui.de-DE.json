@@ -1,0 +1,58 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "measure pro",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "hilfe"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "nach Hause gehen",
+            "zuhause"
+          ]
+        },
+        {
+          "name": "ShowMetricConversionsIntent",
+          "samples": [
+            "mir die Metrikkonvertierungen anzuzeigen",
+            "zeige mir Metrik-Konvertierungen",
+            "metrikkonvertierungen anzeigen",
+            "metrik anzeigen",
+            "metrische Konvertierungen",
+            "metrisch"
+          ]
+        },
+        {
+          "name": "ShowUSMeasurementsIntent",
+          "samples": [
+            "um mir amerikanische Maße zu zeigen",
+            "zeige mir amerikanische Maße",
+            "zeig mir Amerikaner",
+            "amerikanisch",
+            "zeig mir u.s. Messungen",
+            "zeig uns. Messungen",
+            "zeig uns."
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}
